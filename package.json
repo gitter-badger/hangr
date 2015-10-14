@@ -1,0 +1,29 @@
+{
+  "name": "hangr",
+  "version": "0.0.0",
+  "description": "Web Application Stack",
+  "homepage": "http://hangr.software",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hangrJS/hangr"
+  },
+  "keywords": [
+    "hapi",
+    "angular",
+    "framework",
+    "http",
+    "api",
+    "web"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/hangrJS/hangr/issues"
+  },
+  "license": "MIT"
+}
