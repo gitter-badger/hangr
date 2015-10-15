@@ -7,3 +7,6 @@ node_js:
 sudo: false
 
 script: "npm test"
+
+after_success:
+  - "lab -r lcov | coveralls"
