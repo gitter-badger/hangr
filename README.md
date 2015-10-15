@@ -1,6 +1,7 @@
 # hangr
 
 [![Build Status](https://travis-ci.org/hangrJS/hangr.svg?branch=master)](https://travis-ci.org/hangrJS/hangr)
+[![Coverage Status](https://coveralls.io/repos/hangrJS/hangr/badge.svg?branch=master&service=github)](https://coveralls.io/github/hangrJS/hangr?branch=master)
 
 Web Application Stack
 
