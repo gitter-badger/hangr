@@ -11,7 +11,7 @@ describe('index', function () {
 
     it('contains a hapi server', function (done) {
 
-        expect(Hangr.hapi).not.to.be.null();
+        expect(Hangr.Hapi).not.to.be.null();
         done();
     });
 });
