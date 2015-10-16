@@ -9,4 +9,4 @@ sudo: false
 script: "npm test"
 
 after_script:
-  - "lab -r lcov | coveralls"
+  - "lab -r lcov | codeclimate-test-reporter"
