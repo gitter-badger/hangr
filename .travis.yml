@@ -8,5 +8,5 @@ sudo: false
 
 script: "npm test"
 
-after_success:
+after_script:
   - "lab -r lcov | coveralls"
