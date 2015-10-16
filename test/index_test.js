@@ -9,11 +9,14 @@ var expect = Code.expect;
 
 describe('index', function () {
 
-    it('contains a hapi server', function (done) {
+    it('contains a hapi server that can be started and stopped', function (done) {
 
+        var port = 12345;
+
+        Hangr.connections(port);
         Hangr.start();
-        expect(Hangr.Hapi).not.to.equal(null);
-        expect(Hangr.Hapi.info.port).to.equal(55555);
+        expect(Hangr.HapiServer).not.to.equal(null);
+        expect(Hangr.HapiServer.info.port).to.equal(port);
         Hangr.stop();
         done();
     });
