@@ -34,7 +34,7 @@
     "lab": "^6.2.0"
   },
   "scripts": {
-    "test": "lab -a code -t 100",
+    "test": "lab -a code -t 70",
     "test-tap": "lab -a code -r tap -o tests.tap",
     "test-cov-html": "lab -a code -r html -o coverage/coverage.html -L"
   },
