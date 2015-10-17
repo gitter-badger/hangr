@@ -13,3 +13,31 @@
 * [npm](https://www.npmjs.com)
 * [gulp](http://gulpjs.com)
 * [RethinkDB](https://www.rethinkdb.com)
+
+
+## Setup
+
+### Add to project
+```bash
+npm install hangr --save
+```
+
+### Yeoman Seed Coming Soon
+Copy the structure of [hangr-website](https://github.com/hangr/hangr-website)
+
+Server.js
+
+```node
+'use strict';
+
+var Hangr = require('hangr');
+
+Hangr.connections();
+Hangr.addAngularRoutes();
+Hangr.start();
+```
+
+## Run App
+```bash
+npm start
+```
