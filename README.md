@@ -2,11 +2,12 @@
 
 ## hangr
 
-[![](https://img.shields.io/npm/v/hangr.svg)](https://www.npmjs.com/package/hangr)
-[![](https://img.shields.io/npm/l/hangr.svg)]()
-
 [![Build Status](http://jenkins.hangr.software/buildStatus/icon?job=hangr)](http://jenkins.hangr.software/job/hangr/)
 [![Code Climate](https://codeclimate.com/github/hangr/hangr/badges/gpa.svg)](https://codeclimate.com/github/hangr/hangr)
+[![](https://img.shields.io/npm/l/hangr.svg)]()
+[![](https://img.shields.io/npm/v/hangr.svg)](https://www.npmjs.com/package/hangr)
+
+[![NPM](https://nodei.co/npm/hangr.png?downloads=true&stars=true)](https://nodei.co/npm/hangr/)
 
 ### Web Application Stack
 
