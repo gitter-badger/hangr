@@ -1,6 +1,6 @@
 {
   "name": "hangr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Web Application Stack",
   "homepage": "http://hangr.software",
   "main": "lib/index.js",
