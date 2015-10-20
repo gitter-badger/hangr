@@ -33,7 +33,7 @@
   "scripts": {
     "pretest": "npm install",
     "test": "lab -a code -t 70",
-    "preci-test": "npm pretest",
+    "preci-test": "npm run pretest",
     "ci-test": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o clover.xml --verbose"
   },
   "bugs": {
