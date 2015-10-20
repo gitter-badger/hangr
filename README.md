@@ -82,3 +82,4 @@ hangr.start();
 ```bash
 npm start
 ```
+invoke build
