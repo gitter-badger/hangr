@@ -44,9 +44,9 @@ describe('hangr', function () {
 
         hangr.start(function (err) {
             expect(err).to.not.exist();
+            expect(started, 'Failed to start').to.equal(1);
             hangr.stop(function() {
-                expect(started).to.equal(1);
-                expect(stopped).to.equal(1);
+                expect(stopped, 'Failed to stop').to.equal(1);
                 done();
             });
         });
