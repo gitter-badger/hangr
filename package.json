@@ -34,7 +34,7 @@
     "pretest": "npm install",
     "test": "lab -a code -r console -o stdout -r html -o coverage.html -v -t 80",
     "preci-test": "npm run pretest",
-    "ci-test": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 80"
+    "ci-test": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 70"
   },
   "bugs": {
     "url": "https://github.com/hangr/hangr/issues"
