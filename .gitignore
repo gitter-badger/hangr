@@ -1,3 +1,6 @@
+coverage.*
+*.tap
+
 # Created by https://www.gitignore.io/api/intellij,node,linux,osx,windows
 
 ### Intellij ###
