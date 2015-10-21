@@ -13,7 +13,7 @@ describe('hangr', function () {
     it('can create a hapiServer with a port number', function (done) {
         var hangr = new Hangr();
 
-        expect(hangr.hapiServer).not.to.be.null();
+        expect(hangr.hapiServer).to.not.be.null();
         expect(hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
         expect(hangr.hapiServer.info.port).to.equal(55555);
         done();
@@ -23,7 +23,7 @@ describe('hangr', function () {
         var port = 12345;
         var hangr = new Hangr({port: port});
 
-        expect(hangr.hapiServer).not.to.be.null();
+        expect(hangr.hapiServer).to.not.be.null();
         expect(hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
         expect(hangr.hapiServer.info.port).to.equal(port);
         done();
@@ -31,13 +31,24 @@ describe('hangr', function () {
 
     it('can start and stop a hapiServer', function (done) {
         var hangr = new Hangr();
+        var started = 0;
+        var stopped = 0;
 
-        hangr.start(function () {
-            expect(hangr.hapiServer.info.started, 'Failed to start').not.to.equal(0);
-            hangr.stop(function () {
-                expect(hangr.hapiServer.info.started, 'Failed to stop').to.equal(0);
+        hangr.hapiServer.on('start', function() {
+            ++started;
+        });
+
+        hangr.hapiServer.on('stop', function() {
+            ++stopped;
+        });
+
+        hangr.start(function (err) {
+            expect(err).to.not.exist();
+            hangr.stop(function() {
+                expect(started).to.equal(1);
+                expect(stopped).to.equal(1);
+                done();
             });
         });
-        done();
     });
 });
