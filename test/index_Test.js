@@ -31,22 +31,16 @@ describe('hangr', function () {
 
     it('can start and stop a hapiServer', function (done) {
         var hangr = new Hangr();
-        var started = 0;
-        var stopped = 0;
-
-        hangr.hapiServer.on('start', function() {
-            ++started;
-        });
-
-        hangr.hapiServer.on('stop', function() {
-            ++stopped;
-        });
+        var started = false;
+        var stopped = false;
 
         hangr.start(function (err) {
             expect(err).to.not.exist();
-            expect(started, 'Failed to start').to.equal(1);
+            started = true;
             hangr.stop(function() {
-                expect(stopped, 'Failed to stop').to.equal(1);
+                stopped = true;
+                expect(started, 'Failed to start').to.be.true();
+                expect(stopped, 'Failed to stop').to.be.true();
                 done();
             });
         });
