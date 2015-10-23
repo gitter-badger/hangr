@@ -44,10 +44,8 @@ Server.js
 ```node
 'use strict';
 
-var Hangr = require('hangr');
+var hangr = require('hangr');
 
-var hangr = new Hangr();
-hangr.addSpaRoutes();
 hangr.start();
 ```
 
@@ -67,13 +65,10 @@ Server.js
 ```node
 'use strict';
 
-var Hangr = require('hangr');
+var hangr = require('hangr');
 
-var hangr = new Hangr();
-hangr.addSpaRoutes({
-    base: 'webapp',
-    dirs: ['css', 'js', 'img', 'templates']
-});
+hangr.spa.base = 'webapp';
+hangr.spa.dirs = ['css', 'js', 'img', 'templates'];
 hangr.start();
 ```
 **base** and **dirs** are both optional
@@ -82,4 +77,3 @@ hangr.start();
 ```bash
 npm start
 ```
-invoke build

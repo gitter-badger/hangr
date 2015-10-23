@@ -8,36 +8,41 @@ var describe = lab.describe;
 var it = lab.it;
 var expect = Code.expect;
 
-describe('hangr', function () {
+describe('Hangr', function () {
 
-    it('can create a hapiServer with a port number', function (done) {
-        var hangr = new Hangr();
-
-        expect(hangr.hapiServer).to.not.be.null();
-        expect(hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
-        expect(hangr.hapiServer.info.port).to.equal(55555);
+    it('gets initialize with a defaults', function (done) {
+        expect(Hangr.port).to.equal(55555);
+        expect(Hangr.spa.enabled).to.be.true();
+        expect(Hangr.spa.base).to.equal('public');
+        expect(Hangr.spa.dirs).to.include(['css', 'js', 'img', 'views']);
+        expect(Hangr.hapiServer).to.not.be.null();
+        expect(Hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
         done();
     });
 
-    it('can create a hapiServer with a specified port number', function (done) {
+    it('have its port set', function (done) {
         var port = 12345;
-        var hangr = new Hangr({port: port});
+        var hangr = new Hangr.Hangr(port);
 
-        expect(hangr.hapiServer).to.not.be.null();
-        expect(hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
-        expect(hangr.hapiServer.info.port).to.equal(port);
+        expect(hangr.port).to.equal(port);
+
+        port = 54321;
+        hangr.port = port;
+
+        expect(hangr.port).to.equal(port);
         done();
     });
 
     it('can start and stop a hapiServer', function (done) {
-        var hangr = new Hangr();
+        var hangr = new Hangr.Hangr();
+        hangr.disableSpa();
         var started = false;
         var stopped = false;
 
         hangr.start(function (err) {
             expect(err).to.not.exist();
             started = true;
-            hangr.stop(function() {
+            hangr.stop(function () {
                 stopped = true;
                 expect(started, 'Failed to start').to.be.true();
                 expect(stopped, 'Failed to stop').to.be.true();
