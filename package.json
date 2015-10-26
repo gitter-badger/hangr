@@ -1,30 +1,36 @@
 {
   "name": "hangr",
+  "description": "Isomorphic Javascript, Connected Client, Web Application Stack",
   "version": "0.0.5",
-  "description": "Web Application Stack",
   "homepage": "http://hangr.software",
-  "main": "lib/index.js",
+  "author": "David Clutter <cluttered.code@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/hangr/hangr"
   },
+  "preferGlobal": true,
+  "bin": {
+    "hangr": "./bin/hangr.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
   "keywords": [
     "hapi",
     "angular",
+    "rethinkdb",
     "framework",
     "http",
     "api",
-    "web"
+    "web",
+    "application",
+    "stack",
+    "isomorphic",
+    "connected client"
   ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
   "dependencies": {
-    "boom": "^2.9.0",
-    "hapi": "^10.4.1",
-    "hoek": "^2.16.3",
-    "inert": "^3.1.0",
-    "joi": "^6.9.0"
+    "commander": "^2.9.0"
   },
   "devDependencies": {
     "code": "^1.5.0",
@@ -33,11 +39,14 @@
   "scripts": {
     "pretest": "npm install",
     "test": "lab -a code -r console -o stdout -r html -o coverage.html -v -t 80",
-    "preci-test": "npm run pretest",
-    "ci-test": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 80"
+    "precitest": "npm run pretest",
+    "citest": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 80"
   },
   "bugs": {
     "url": "https://github.com/hangr/hangr/issues"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "license": "MIT"
 }
