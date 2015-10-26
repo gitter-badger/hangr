@@ -37,7 +37,7 @@ public
   - img
   - views
   - index.html
-server.js
+index.js
 ```
 
 Server.js
@@ -58,7 +58,7 @@ webapp
   - img
   - templates
   - index.html
-server.js
+index.js
 ```
 
 Server.js
