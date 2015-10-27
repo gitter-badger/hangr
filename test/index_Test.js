@@ -1,4 +1,4 @@
-var Hangr = require('../.');
+var Hangr = require('../lib/.');
 var Hapi = require('hapi');
 var Code = require('code');
 var Lab = require('lab');
@@ -10,17 +10,17 @@ var expect = Code.expect;
 
 describe('Hangr', function () {
 
-    it('gets initialize with a defaults', function (done) {
+    it('gets initialize with defaults', function (done) {
         expect(Hangr.port).to.equal(55555);
         expect(Hangr.spa.enabled).to.be.true();
-        expect(Hangr.spa.base).to.equal('public');
+        expect(Hangr.spa.base).to.equal('spa');
         expect(Hangr.spa.dirs).to.include(['css', 'js', 'img', 'views']);
         expect(Hangr.hapiServer).to.not.be.null();
         expect(Hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
         done();
     });
 
-    it('have its port set', function (done) {
+    it('can have ha specified port', function (done) {
         var port = 12345;
         var hangr = new Hangr.Hangr(port);
 
@@ -35,7 +35,6 @@ describe('Hangr', function () {
 
     it('can start and stop a hapiServer', function (done) {
         var hangr = new Hangr.Hangr();
-        hangr.disableSpa();
         var started = false;
         var stopped = false;
 
