@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Hangr">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <base href="/">
+    </head>
+
+    <body>
+
+        <app-header></app-header>
+
+        <main role="main" class="container">
+            <div class="row">
+                <div ng-view></div>
+            </div>
+        </main>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/directives/app-header.js"></script>
+    </body>
+</html>
