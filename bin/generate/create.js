@@ -73,9 +73,11 @@ var createNpmPackage = function (options) {
     fs.writeJson('./package.json',
         packageJson,
         function (err) {
-            if (err)
+            if (err) {
                 console.log(err);
-            else console.log('Created: package.json');
+            } else {
+                console.log('Created: package.json');
+            }
         }
     );
 };
@@ -92,10 +94,11 @@ var concatAuthorAndEmail = function (author, email) {
 
 var copyDefaultProject = function() {
     fs.copy(__dirname + '/defaultStructure', '.', function (err) {
-        if (err)
+        if (err) {
             return console.error(err);
+        }
         console.log("Copied Default Project Structure");
-    })
+    });
 };
 
 
