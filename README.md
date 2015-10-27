@@ -2,6 +2,7 @@
 
 # hangr
 
+[![Circle CI](https://circleci.com/gh/hangr/hangr/tree/master.svg?style=svg)](https://circleci.com/gh/hangr/hangr/tree/master)
 [![Build Status](http://jenkins.hangr.software/buildStatus/icon?job=hangr)](http://jenkins.hangr.software/job/hangr/)
 [![Code Climate](https://codeclimate.com/github/hangr/hangr/badges/gpa.svg)](https://codeclimate.com/github/hangr/hangr)
 [![License](https://img.shields.io/npm/l/hangr.svg)](http://opensource.org/licenses/MIT)
@@ -13,69 +14,35 @@
 
 * [Hapi](http://hapijs.com)
 * [AngularJS](https://angularjs.org)
-* [npm](https://www.npmjs.com)
-* [gulp](http://gulpjs.com)
 * [RethinkDB](https://www.rethinkdb.com)
 
 
 ## Setup
 
-### Add to project
+### Add hangr to npm globally
 ```bash
-npm install hangr --save
-```
-**Yeoman Seed Coming Soon**
-
-## Static Web Applications
-
-# Default Static Project
-Structure
-```plain
-public
-  - css
-  - js
-  - img
-  - views
-  - index.html
-index.js
+sudo npm install hangr -g
 ```
 
-Server.js
-```node
-'use strict';
-
-var hangr = require('hangr');
-
-hangr.start();
-```
-
-# Custom Static Project
-Structure
-```plain
-webapp
-  - css
-  - js
-  - img
-  - templates
-  - index.html
-index.js
-```
-
-Server.js
-```node
-'use strict';
-
-var hangr = require('hangr');
-
-hangr.spa.base = 'webapp';
-hangr.spa.dirs = ['css', 'js', 'img', 'templates'];
-hangr.start();
-```
-**base** and **dirs** are both optional
-
-## Run App
+## Create Application
 ```bash
-npm start
+mkdir testApp
+cd testApp
+hangr create testApp
+```
+**follow the prompts to populate npm package.json**
+
+This will create the default application with a Single Page Application (SPA).
+
+The project will be loaded with the following dependencies:
+* [JQuery](https://jquery.com)
+* [AngularJS](https://angularjs.org)
+* [Bootstrap](http://getbootstrap.com)
+* [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
+
+## Run Application
+```bash
+hangr
 ```
 
 ## License
