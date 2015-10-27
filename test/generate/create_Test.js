@@ -10,7 +10,7 @@ var expect = Code.expect;
 describe('generate/create', function () {
 
     it('can concatenate author and email', function (done) {
-        var create = require('.././create');
+        var create = require('../../bin/generate/create');
         var author = 'AUTHOR';
         var email = 'EMAIL';
 
@@ -20,8 +20,8 @@ describe('generate/create', function () {
         done();
     });
 
-    it('can ignore email concatenate author and email', function (done) {
-        var create = require('.././create');
+    it('can ignore email when concatenating author and email', function (done) {
+        var create = require('../../bin/generate/create');
         var author = 'AUTHOR';
         var email = '';
 
@@ -31,8 +31,8 @@ describe('generate/create', function () {
         done();
     });
 
-    it('can ignore author concatenate author and email', function (done) {
-        var create = require('.././create');
+    it('can ignore author when concatenating author and email', function (done) {
+        var create = require('../../bin/generate/create');
         var author = '';
         var email = 'EMAIL';
 
