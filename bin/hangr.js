@@ -14,25 +14,25 @@ cli.command('create [appName]')
     });
 
 cli.command('start')
-    .description('run this existing application')
+    .description('run application in "development" mode')
     .action(function (env) {
-        npm.load(function (err) {
-            if (err)
+        npm.load({}, function (err) {
+            if (err) {
                 return console.log(err);
-            npm.commands.install([], function (er, data) {
-                if (er)
-                    return console.log(er);
-                npm.commands.start([], function (er, data) {
-                    if (er)
-                        return console.log(er);
-                });
-            });
-            npm.on("log", function (message) {
-                // log the progress of the installation
-                console.log(message);
-            });
+            }
+            npm.commands.run(['start']);
         });
+    });
 
+cli.command('deploy')
+    .description('run application in "production" mode')
+    .action(function (env) {
+        npm.load({}, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            npm.commands.run(['deploy']);
+        });
     });
 
 
@@ -40,7 +40,7 @@ if (process.argv.length > 2)
     cli.parse(process.argv);
 else {
     fs.access(process.cwd() + '/server.js', fs.F_OK, function (err) {
-        if(err) {
+        if (err) {
             console.error('No hangr project exists. Try running "hangr create <appName>"');
             process.argv.push('--help');
         } else {

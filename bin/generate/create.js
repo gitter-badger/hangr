@@ -7,6 +7,11 @@ module.exports.interactiveCreate = function (appName) {
     prompt.get([
         'description',
         {
+            name: 'private',
+            type: 'boolean',
+            default: true
+        },
+        {
             name: 'version',
             pattern: /^\d+\.\d+\.\d+$/,
             default: '1.0.0'
@@ -28,7 +33,7 @@ module.exports.interactiveCreate = function (appName) {
         }
     ], function (err, options) {
         options.appName = appName;
-        createNpmPackage(options)
+        createNpmPackage(options);
         copyDefaultProject();
     });
 };
@@ -50,7 +55,9 @@ var createNpmPackage = function (options) {
             hangr: '^' + hangrPackage.version
         },
         scripts: {
-            prestart: 'npm install'
+            "prestart": "npm prune && npm install",
+            "predeploy": "npm prune && npm install --production",
+            "deploy": "NODE_ENV=production node server.js"
         },
         bugs: {
             url: options.bugsUrl
@@ -60,6 +67,9 @@ var createNpmPackage = function (options) {
         },
         license: options.license
     };
+    if(options.private) {
+        packageJson.private = true;
+    }
     fs.writeJson('./package.json',
         packageJson,
         function (err) {
