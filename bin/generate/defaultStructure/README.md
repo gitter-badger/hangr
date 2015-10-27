@@ -1,6 +1,6 @@
-# hangr Template Application
+# hangr Application
 
-# Run
+## Run
 ```bash
 hangr
 ```
@@ -9,5 +9,5 @@ or
 hangr start
 ```
 
-# Use
+## Use
 [hangr Application](http://localhost:55555)
