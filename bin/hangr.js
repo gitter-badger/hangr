@@ -41,6 +41,7 @@ if (process.argv.length > 2)
 else {
     fs.access(process.cwd() + '/server.js', fs.F_OK, function (err) {
         if(err) {
+            console.error('No hangr project exists. Try running "hangr create <appName>"');
             process.argv.push('--help');
         } else {
             process.argv.push('start');
