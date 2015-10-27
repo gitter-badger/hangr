@@ -1,12 +1,16 @@
 # hangr Application
 
 ## Run
+
+### Development
 ```bash
 hangr
 ```
-or
+**long command:** `hangr start`
+
+### Production
 ```bash
-hangr start
+hangr deploy
 ```
 
 ## Use
