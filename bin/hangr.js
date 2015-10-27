@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 'use strict';
-
-var CWD = process.cwd();
-
 var cli = require('commander'),
-    create = require('../lib/build/create'),
+    create = require('../lib/building/create'),
     fs = require('fs');
 
 cli.version('v' + require('../package.json').version);
 
-cli.command('create [name]')
+cli.command('create [appName]')
     .description('create a new application')
-    .action(function(name) {
-        create.all(CWD, name);
+    .action(function(appName) {
+        create.interactiveCreate(appName);
     });
 
 cli.command('*')
