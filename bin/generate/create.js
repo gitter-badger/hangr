@@ -49,6 +49,9 @@ var createNpmPackage = function (options) {
         dependencies: {
             hangr: '^' + hangrPackage.version
         },
+        scripts: {
+            prestart: 'npm install'
+        },
         bugs: {
             url: options.bugsUrl
         },
@@ -78,10 +81,10 @@ var concatAuthorAndEmail = function (author, email) {
 };
 
 var copyDefaultProject = function() {
-    fs.copy(__dirname + '/defaults', '.', function (err) {
+    fs.copy(__dirname + '/defaultStructure', '.', function (err) {
         if (err)
             return console.error(err);
-        console.log("Copied Default Project");
+        console.log("Copied Default Project Structure");
     })
 };
 
