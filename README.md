@@ -1,4 +1,4 @@
-# hangr **(COMING SOON)**
+# hangr **(ALPHA)**
 
 [![Circle CI](https://circleci.com/gh/hangr/hangr/tree/master.svg?style=svg)](https://circleci.com/gh/hangr/hangr/tree/master)
 [![Build Status](http://jenkins.hangr.software/buildStatus/icon?job=hangr)](http://jenkins.hangr.software/job/hangr/)
