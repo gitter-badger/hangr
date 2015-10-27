@@ -1,6 +1,4 @@
-# Coming Soon
-
-# hangr
+# hangr **(COMING SOON)**
 
 [![Circle CI](https://circleci.com/gh/hangr/hangr/tree/master.svg?style=svg)](https://circleci.com/gh/hangr/hangr/tree/master)
 [![Build Status](http://jenkins.hangr.software/buildStatus/icon?job=hangr)](http://jenkins.hangr.software/job/hangr/)
@@ -17,9 +15,7 @@
 * [RethinkDB](https://www.rethinkdb.com)
 
 
-## Setup
-
-### Add hangr to npm globally
+## Setup hangr Globally
 ```bash
 sudo npm install hangr -g
 ```
@@ -44,6 +40,9 @@ The project will be loaded with the following dependencies:
 ```bash
 hangr
 ```
+
+## Use Application
+View **running** default application: [Default Application Page](http://localhost:55555)
 
 ## License
 
