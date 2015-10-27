@@ -37,8 +37,16 @@ The project will be loaded with the following dependencies:
 * [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 
 ## Run Application
+
+### Develpment
 ```bash
 hangr
+```
+**Long command:** `hangr start`
+
+### Production
+```bash
+hangr deploy
 ```
 
 ## Use Application
