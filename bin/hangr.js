@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var cli = require('commander'),
-    create = require('../lib/building/create'),
+    create = require('../lib/generate/create'),
     fs = require('fs');
 
 cli.version('v' + require('../package.json').version);
