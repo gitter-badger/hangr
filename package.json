@@ -1,7 +1,7 @@
 {
   "name": "hangr",
   "description": "Isomorphic Javascript, Connected Client, Web Application Stack",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "http://hangr.software",
   "author": "David Clutter <cluttered.code@gmail.com>",
   "main": "lib/index.js",
