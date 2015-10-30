@@ -2,7 +2,7 @@
 'use strict';
 var cli = require('commander'),
     create = require('./generate/create'),
-    fs = require('fs'),
+    fs = require('fs-extra'),
     npm = require('npm');
 
 var addNpmCommand = function (command, description) {
@@ -29,16 +29,16 @@ cli.command('create [appName]')
 addNpmCommand('start', 'run application in "development" mode');
 addNpmCommand('deploy', 'run application in "production" mode');
 
-if (process.argv.length > 2) {
-    cli.parse(process.argv);
-} else {
-    fs.access(process.cwd() + '/server.js', fs.F_OK, function (err) {
-        if (err) {
-            console.error('No hangr project exists. Try running "hangr create <appName>"');
-            process.argv.push('--help');
-        } else {
-            process.argv.push('start');
-        }
-        cli.parse(process.argv);
-    });
+
+if (process.argv.length < 3) {
+    var serverPath = process.cwd() + '/server.js';
+    try {
+        fs.accessSync(serverPath);
+        process.argv.push('start');
+    } catch (ex) {
+        console.error('No hangr project exists. Try running "hangr create <appName>"');
+        process.argv.push('--help');
+    }
 }
+
+cli.parse(process.argv);
