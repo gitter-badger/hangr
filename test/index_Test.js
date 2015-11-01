@@ -11,25 +11,11 @@ var expect = Code.expect;
 describe('Hangr', function () {
 
     it('gets initialize with defaults', function (done) {
-        expect(Hangr.port).to.equal(55555);
-        expect(Hangr.spa.enabled).to.be.true();
-        expect(Hangr.spa.base).to.equal('spa');
-        expect(Hangr.spa.dirs).to.include(['css', 'js', 'img', 'views']);
+        expect(Hangr.config.port).to.equal(55555);
+        expect(Hangr.config.spa.enabled).to.be.true();
+        expect(Hangr.config.spa.base).to.equal('spa');
         expect(Hangr.hapiServer).to.not.be.null();
         expect(Hangr.hapiServer).to.be.an.instanceof(Hapi.Server);
-        done();
-    });
-
-    it('can have ha specified port', function (done) {
-        var port = 12345;
-        var hangr = new Hangr.Hangr(port);
-
-        expect(hangr.port).to.equal(port);
-
-        port = 54321;
-        hangr.port = port;
-
-        expect(hangr.port).to.equal(port);
         done();
     });
 
