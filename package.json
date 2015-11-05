@@ -43,9 +43,9 @@
   },
   "scripts": {
     "pretest": "npm prune && npm install",
-    "test": "lab -a code -r console -o stdout -r html -o coverage.html -v -t 84",
+    "test": "lab -a code -r console -o stdout -r html -o coverage.html -v -t 80",
     "precitest": "npm run pretest",
-    "citest": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 84"
+    "citest": "lab -c -a code -r console -o stdout -r tap -o tests.tap -r clover -o coverage.xml -v -t 80"
   },
   "bugs": {
     "url": "https://github.com/hangr/hangr/issues"
