@@ -5,31 +5,10 @@ var fs = require('fs-extra'),
 module.exports.interactiveCreate = function (appName) {
     prompt.start();
     prompt.get([
-        'description',
-        {
-            name: 'private',
-            type: 'boolean',
-            default: true
-        },
         {
             name: 'version',
             pattern: /^\d+\.\d+\.\d+$/,
             default: '1.0.0'
-        },
-        'homepage',
-        'author',
-        'email',
-        {
-            name: 'repositoryType',
-            default: 'git'
-        },
-        {
-            name: 'repositoryUrl'
-        },
-        'bugsUrl',
-        {
-            name: 'license',
-            default: 'ISC'
         }
     ], function (err, options) {
         options.appName = appName;
@@ -40,32 +19,27 @@ module.exports.interactiveCreate = function (appName) {
 
 var createNpmPackage = function (options) {
     var hangrPackage = require(__dirname + '/../../package.json');
-    options.author = concatAuthorAndEmail(options.author, options.email);
     var packageJson = {
         name: options.appName,
-        description: options.description,
         version: options.version,
-        author: options.author,
         main: 'server.js',
-        repository: {
-            type: options.repositoryType,
-            url: options.repositoryUrl
-        },
         dependencies: {
             hangr: '^' + hangrPackage.version
         },
+        devDependencies: {
+            "browser-sync": "^2.9.11",
+            gulp: "^3.9.0",
+            "gulp-nodemon": "^2.0.4"
+        },
         scripts: {
             "prestart": "npm prune && npm install",
+            "start": "NODE_ENV=development gulp browser-sync",
             "predeploy": "npm prune && npm install --production",
             "deploy": "NODE_ENV=production node server.js"
         },
-        bugs: {
-            url: options.bugsUrl
-        },
         engines: {
             node: hangrPackage.engines.node
-        },
-        license: options.license
+        }
     };
     if(options.private) {
         packageJson.private = true;
@@ -80,16 +54,6 @@ var createNpmPackage = function (options) {
             }
         }
     );
-};
-
-var concatAuthorAndEmail = function (author, email) {
-    if (email) {
-        if (author.length !== 0) {
-            author += " ";
-        }
-        author += '<' + email + '>';
-    }
-    return author;
 };
 
 var copyDefaultProject = function() {

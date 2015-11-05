@@ -51,7 +51,7 @@
     "url": "https://github.com/hangr/hangr/issues"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=5.0.0"
   },
   "license": "MIT"
 }
