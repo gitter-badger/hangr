@@ -32,6 +32,8 @@ var createNpmPackage = function (options) {
             "gulp-nodemon": "^2.0.4"
         },
         scripts: {
+            "pretest": "npm install",
+            "test": "echo \"Error: no test specified\" && exit 1",
             "prestart": "npm prune && npm install",
             "start": "NODE_ENV=development gulp browser-sync",
             "predeploy": "npm prune && npm install --production",
@@ -41,9 +43,6 @@ var createNpmPackage = function (options) {
             node: hangrPackage.engines.node
         }
     };
-    if(options.private) {
-        packageJson.private = true;
-    }
     fs.writeJson('./package.json',
         packageJson,
         function (err) {

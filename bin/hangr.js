@@ -31,12 +31,11 @@ addNpmCommand('deploy', 'run application in "production" mode');
 
 
 if (process.argv.length < 3) {
-    console.log(process.argv);
     var appPath = process.cwd();
     try {
         var projectConfig = require(appPath + '/package.json');
         if(!projectConfig.main) {
-            appPath += '/app.js'
+            appPath += '/server.js'
         }
         appPath += '/' + projectConfig.main;
         fs.accessSync(appPath);
