@@ -31,12 +31,18 @@ addNpmCommand('deploy', 'run application in "production" mode');
 
 
 if (process.argv.length < 3) {
-    var serverPath = process.cwd() + '/server.js';
+    var appPath = process.cwd();
     try {
-        fs.accessSync(serverPath);
+        var projectConfig = require(appPath + '/package.json');
+        if(!projectConfig.main) {
+            appPath += '/server.js'
+        }
+        appPath += '/' + projectConfig.main;
+        fs.accessSync(appPath);
         process.argv.push('start');
-    } catch (ex) {
-        console.error('No hangr project exists. Try running "hangr create <appName>"');
+    } catch(ex) {
+        console.error('No hangr project exists (' + appPath + ').');
+        console.error('Try running "hangr create <appName>"');
         process.argv.push('--help');
     }
 }
