@@ -1,6 +1,8 @@
 # hangr
 # Currently in ALPHA
 
+[![Join the chat at https://gitter.im/hangr/hangr](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hangr/hangr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Circle CI](https://circleci.com/gh/hangr/hangr/tree/master.svg?style=svg)](https://circleci.com/gh/hangr/hangr/tree/master)
 [![Build Status](http://jenkins.hangr.software/buildStatus/icon?job=hangr)](http://jenkins.hangr.software/job/hangr/)
 [![Code Climate](https://codeclimate.com/github/hangr/hangr/badges/gpa.svg)](https://codeclimate.com/github/hangr/hangr)
